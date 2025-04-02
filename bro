@@ -7,11 +7,17 @@ do_usual(){
 	git push origin main
 }
 
+create_repo() {
+	echo "Creating repository $1 on github bro."
+}
+
 if [ -z $1 ];
 	then {
-		echo "Yo bro! Use this shit like this: bro [commit message] [branch name]"
+		echo "Yo bro! Use this like this: bro <command 1> <command 2> <command 3>..."
 	}
-else
-	echo "$1"
+elif [ $1 == "repo" ];
+	then {
+		create_repo() $1
+	}
 fi
 
